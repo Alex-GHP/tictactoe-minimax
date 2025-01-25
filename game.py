@@ -6,6 +6,7 @@ class Game:
     def __init__(self, screen):
         self.screen = screen
         self.board = Board()
+        # self.ai = AI()
         self.player = 1 # 1-cross 2-circles
         self.show_lines()
 
