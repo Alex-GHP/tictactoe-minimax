@@ -30,7 +30,9 @@ def main():
 
                 if board.empty_sqr(row, col):
                     board.mark_sqr(row, col, game.player)
-                    print(board.squares)
+                    
+                    game.draw_fig(row, col)
+
                     game.next_turn()
 
         
