@@ -15,6 +15,7 @@ def main():
 
     game = Game(screen)
     board = game.board
+    ai = game.ai
     
     # GAME LOOP
     while True:
@@ -30,11 +31,17 @@ def main():
 
                 if board.empty_sqr(row, col):
                     board.mark_sqr(row, col, game.player)
-                    
                     game.draw_fig(row, col)
-
                     game.next_turn()
 
+        if game.gamemode == 'ai' and game.player == ai.player:
+            pygame.display.update()
+
+            row, col = ai.eval(board)
+
+            board.mark_sqr(row, col, ai.player)
+            game.draw_fig(row, col)
+            game.next_turn()
         
         pygame.display.update()
 

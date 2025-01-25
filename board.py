@@ -40,7 +40,7 @@ class Board:
         empty_sqrs = []
         for row in range(ROWS):
             for col in range(COLS):
-                if self.empty_sqrs(row, col):
+                if self.empty_sqr(row, col):
                     empty_sqrs.append((row, col))
 
         return empty_sqrs
